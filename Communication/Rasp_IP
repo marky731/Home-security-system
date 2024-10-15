@@ -1,0 +1,9 @@
+172.21.64.93
+172.20.10.2
+
+mosquitto_sub -v -h 172.21.64.93 -t esp32/light
+
+
+mosquitto_sub -h localhost -t test/topic
+mosquitto_pub -h localhost -t test/topic -m "Hello World"
+

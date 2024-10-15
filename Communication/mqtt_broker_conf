@@ -1,0 +1,12 @@
+import mosquitto
+
+#Broker config
+broker = mosquitto.Mosquitto()
+broker.connect("localhost", 1883)
+broker.subscribe("my_topic")
+
+# Process incoming messages
+while True:
+  message = broker.wait_msg()
+  if message:
+    print("Received message: " + str(message.payload.decode("utf-8")))
