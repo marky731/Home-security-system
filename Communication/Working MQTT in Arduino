@@ -55,5 +55,5 @@ void loop() {
 
   client.publish("sensor/light", payload.c_str());  // Publish data to the topic
 
-  delay(100);
+  delay(100);  // This is the most critical delay, defines how fast it sends data
 }
