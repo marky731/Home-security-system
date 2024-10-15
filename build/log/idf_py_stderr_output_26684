@@ -1,0 +1,841 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM6 instead...[0m
+[0;33m--- esp-idf-monitor 1.4.0 on \\.\COM6 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x4004c98c: usb_uart_rx_one_char in ROM
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpbovs3o_y"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpbovs3o_y': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpgtf_7d6f"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpgtf_7d6f': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpd4x8j7fe"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpd4x8j7fe': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp1cfqu3i6"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp1cfqu3i6': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpzy8uedqb"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpzy8uedqb': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp6ekenn78"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp6ekenn78': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp26eg5x69"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp26eg5x69': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp40nfkp37"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp40nfkp37': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpp3awfmyw"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpp3awfmyw': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpgv8pavgh"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpgv8pavgh': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpujok6rc1"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpujok6rc1': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpqzxsw_59"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpqzxsw_59': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpy1oc3jct"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpy1oc3jct': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpc5z0epso"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpc5z0epso': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpxff6hjzg"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpxff6hjzg': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpy8vg0uq4"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpy8vg0uq4': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpk32sdojo"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpk32sdojo': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpaha4yfg0"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpaha4yfg0': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp8ewepruv"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp8ewepruv': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpkpdtk3fz"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpkpdtk3fz': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpcts_xb1_"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpcts_xb1_': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp7cb4bok4"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp7cb4bok4': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpd48zx904"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpd48zx904': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpzbkn33ep"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpzbkn33ep': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpdo4s79s4"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpdo4s79s4': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp8cfrh9un"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp8cfrh9un': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpt_9bjevm"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpt_9bjevm': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp32qn194c"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp32qn194c': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpbsc_u_2k"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpbsc_u_2k': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp0hxzc5j_"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp0hxzc5j_': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpex8yu6wc"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpex8yu6wc': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpkwo4jjrz"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpkwo4jjrz': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmphu1zgotm"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmphu1zgotm': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpm1ahkd0u"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpm1ahkd0u': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpug1a3h8u"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpug1a3h8u': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpsaov9546"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpsaov9546': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpbicujr1k"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpbicujr1k': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpxxg91kta"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpxxg91kta': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp91rem03a"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp91rem03a': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpz49wuth8"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpz49wuth8': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpyoqiie9e"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpyoqiie9e': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp4c3dz7w0"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp4c3dz7w0': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpk84l_z49"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpk84l_z49': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpwlrkkppi"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpwlrkkppi': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp_rj6afwa"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp_rj6afwa': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp2qx98xgh"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp2qx98xgh': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpg2308u0c"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpg2308u0c': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmplvxtl5sm"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmplvxtl5sm': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp9d_oypcf"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp9d_oypcf': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpr4h52_nd"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpr4h52_nd': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpq9q649fj"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpq9q649fj': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpr5d3xcug"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpr5d3xcug': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpfteic5he"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpfteic5he': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[1;31mNone[0m
+[0;33mWaiting for the device to reconnect[0m[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpiym8cj51"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpiym8cj51': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpw69y06r7"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpw69y06r7': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpwlmo59ll"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmpwlmo59ll': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', 'C:\\Users\\nmckw\\mqtt_t2\\build\\mqtt_t2.elf', '-ex', 'target remote | "C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe" -m esp_idf_panic_decoder --target esp32c3 "C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp68la4f05"', '-ex', 'bt']' returned non-zero exit status 1.
+b"\r\nwarning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\r\nThis normally should not happen, please file a bug report.\r\nerror starting child process 'C:\\Users\\nmckw\\.espressif\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe -m esp_idf_panic_decoder --target esp32c3 C:\\Users\\nmckw\\AppData\\Local\\Temp\\tmp68la4f05': CreateProcess: No such file or directory\r\nNo stack.\r\n"
+
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33m0x403807da: esp_restart_noos at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:110
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 4a6c5392cb4e874b46788e588b312287df4a32f8693aea3dfe7066c1eff035c6[0m
+[0;33mStack dump detected[0m
+[0;33m0x40388a32: xTaskRemoveFromEventList at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3995
+0x40386edc: xQueueSemaphoreTake at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1763 (discriminator 1)
+[0m
+[0;33m0x4038e78e: _calloc_r at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/newlib/heap.c:70
+[0m
+[0;33m0x40380001: _vector_table at C:/Users/nmckw/esp/v5.3.1/esp-idf/components/riscv/vect
