@@ -4,3 +4,8 @@
 
 !!!!
 mosquitto_sub -v -h localhost -t sensor/light
+
+camera model
+ov5647
+
+/boot/firmware/config.txt
