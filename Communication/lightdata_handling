@@ -1,4 +1,8 @@
+pip install firebase_admin
+
 import paho.mqtt.client as mqtt
+import firebase_admin
+from firebase_admin import credentials, db
 
 THRESHOLD = 300  # Adjust threshold
 
@@ -6,6 +10,17 @@ THRESHOLD = 300  # Adjust threshold
 BROKER = 'localhost'  
 PORT = 1883           
 TOPIC = 'sensor/light'  
+
+
+# Firebase key
+cred = credentials.Certificate('/home/peworo/Downloads')  # Firebase key directory
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://homesecurity-c8d2c-default-rtdb.firebaseio.com'
+})
+
+
+# firebase path
+ref = db.reference('alerts/light')
 
 # Callback when the client connects to the broker
 def on_connect(client, userdata, flags, rc):
@@ -34,7 +49,8 @@ def on_message(client, userdata, msg):
 def handle_high_value(data):
     # Define your action here when the data goes below the threshold
     print(f"Taking action for low light intensity: {data}")
-
+    ref.push({'intensity': data, 'alert': True})
+    print(f"Data {data} sent to Firebase.")
 # Create MQTT client
 client = mqtt.Client()
 
