@@ -1,4 +1,6 @@
-pip install firebase_admin
+#firebase realtime database id: nmcmin666666@gmail.com
+#firebase realtime database password: 1973kwon!
+
 
 import paho.mqtt.client as mqtt
 import firebase_admin
@@ -13,7 +15,7 @@ TOPIC = 'sensor/light'
 
 
 # Firebase key
-cred = credentials.Certificate('/home/peworo/Downloads')  # Firebase key directory
+cred = credentials.Certificate('/home/peworo/Downloads/homesecurity-c8d2c-firebase-adminsdk-lnqdw-9a879c8769.json')  # Firebase key directory
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://homesecurity-c8d2c-default-rtdb.firebaseio.com'
 })
