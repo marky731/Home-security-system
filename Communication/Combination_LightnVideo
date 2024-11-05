@@ -13,7 +13,7 @@ TOPIC = 'sensor/light'
 class Camera:
     def __init__(self, long_video_location="/home/peworo/Desktop/Home-security-system/RaspPi/Videos/full_video.mp4", 
                  short_video_location="/home/peworo/Desktop/Home-security-system/RaspPi/Videos/short_video.mp4", 
-                 resolution=(640, 480), fps=30):
+                 resolution=(640, 480), fps=30, short_vid_len_second = 5):
         
         # Initialize the camera
         self.picam2 = Picamera2()
@@ -31,7 +31,7 @@ class Camera:
         
         # Buffer for last 5 seconds of frames
         self.frame_buffer = []
-        self.buffer_size = fps * 5  # 5 seconds at the given FPS
+        self.buffer_size = fps * short_vid_len_second  # 5 seconds at the given FPS
 
     def start_camera(self):
         """Start the camera stream."""

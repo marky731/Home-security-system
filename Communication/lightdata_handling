@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 #firebase realtime database id: nmcmin666666@gmail.com
 #firebase realtime database password: 1973kwon!
+=======
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
 
 
 import paho.mqtt.client as mqtt

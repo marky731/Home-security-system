@@ -4,17 +4,24 @@ import time
 import os
 from datetime import datetime
 <<<<<<< HEAD
+<<<<<<< HEAD
 import numpy as np
 from collections import deque
 from threading import Thread
 =======
 >>>>>>> 16a40be (store video every 5 second)
+=======
+import numpy as np
+from collections import deque
+from threading import Thread
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
 
 class Camera:
     def __init__(self,
                  video_directory="/home/peworo/Desktop/Home-security-system/RaspPi/Videos/",
                  resolution=(640, 480),
                  fps=30,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                  segment_duration=5,
@@ -27,6 +34,11 @@ class Camera:
                  segment_duration=20,
                  max_videos=5):  # Store only the latest 10 videos
 >>>>>>> fbaf0f4 (Storing certain amount of video and delete the previous ones)
+=======
+                 segment_duration=5,
+                 max_videos=4,
+                 critical_duration=7):  # Duration of critical video before and after event trigger
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
         # Initialize camera
         self.picam2 = Picamera2()
         config = self.picam2.create_preview_configuration(main={"size": resolution, "format": "RGB888"})
@@ -38,6 +50,7 @@ class Camera:
         self.resolution = resolution
         self.fps = fps
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.segment_duration = segment_duration
         self.max_videos = max_videos
         self.critical_duration = critical_duration
@@ -48,6 +61,11 @@ class Camera:
 =======
         self.max_videos = max_videos  # Maximum number of video files to keep
 >>>>>>> fbaf0f4 (Storing certain amount of video and delete the previous ones)
+=======
+        self.segment_duration = segment_duration
+        self.max_videos = max_videos
+        self.critical_duration = critical_duration
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
         
         # Ensure the video directory exists
         os.makedirs(self.video_directory, exist_ok=True)
@@ -56,6 +74,9 @@ class Camera:
         self.output = None
         self.start_time = None
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
         
         # Buffer for critical video (store past frames)
         self.frame_buffer = deque(maxlen=int(self.fps * self.critical_duration))
@@ -63,18 +84,25 @@ class Camera:
         # Flag for critical video recording
         self.is_critical_recording = False
         self.critical_output = None
+<<<<<<< HEAD
     
     def _get_new_video_filename(self, prefix="video"):
         """Generate a new video filename with a timestamp."""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         return os.path.join(self.video_directory, f"{prefix}_{timestamp}.mp4")
 =======
+=======
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
     
-    def _get_new_video_filename(self):
+    def _get_new_video_filename(self, prefix="video"):
         """Generate a new video filename with a timestamp."""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+<<<<<<< HEAD
         return os.path.join(self.video_directory, f"video_{timestamp}.mp4")
 >>>>>>> 16a40be (store video every 5 second)
+=======
+        return os.path.join(self.video_directory, f"{prefix}_{timestamp}.mp4")
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
     
     def start_camera(self):
         """Start the camera stream."""
@@ -106,23 +134,36 @@ class Camera:
         ])
 =======
         
-        # Manage video storage to keep only the latest 10 videos
+        # Manage video storage to keep only the latest videos
         self._manage_video_storage()
     
     def _manage_video_storage(self):
+<<<<<<< HEAD
         """Delete the oldest video if the maximum number of videos is exceeded."""
         video_files = sorted([f for f in os.listdir(self.video_directory) if f.endswith(".mp4")])
 >>>>>>> fbaf0f4 (Storing certain amount of video and delete the previous ones)
+=======
+        """Delete the oldest video if the maximum number of non-critical videos is exceeded."""
+        # Get a list of all video files, excluding critical videos
+        video_files = sorted([
+            f for f in os.listdir(self.video_directory)
+            if f.endswith(".mp4") and not f.startswith("critical")
+        ])
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
         if len(video_files) > self.max_videos:
             oldest_file = os.path.join(self.video_directory, video_files[0])
             os.remove(oldest_file)
             print(f"Deleted oldest video segment: {oldest_file}")
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
 >>>>>>> 16a40be (store video every 5 second)
 =======
 >>>>>>> fbaf0f4 (Storing certain amount of video and delete the previous ones)
+=======
+
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
     
     def capture_frame(self):
         """Capture a single frame and write it to the current video segment."""
@@ -140,6 +181,9 @@ class Camera:
             self.output.write(frame)
         
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
         # Buffer the frame for critical video
         self.frame_buffer.append(frame)
         
@@ -150,14 +194,20 @@ class Camera:
                 if time.time() - self.critical_start_time >= self.critical_duration:
                     self._stop_critical_video()
         
+<<<<<<< HEAD
 =======
 >>>>>>> 16a40be (store video every 5 second)
+=======
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
         # Check if the current segment has reached the duration limit
         elapsed_time = time.time() - self.start_time
         if elapsed_time >= self.segment_duration:
             self._start_new_video()
     
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
     def start_critical_video(self):
         """Start recording a critical video that includes past frames and continues recording."""
         if not self.is_critical_recording:
@@ -179,18 +229,26 @@ class Camera:
         self.is_critical_recording = False
         self.critical_output = None
     
+<<<<<<< HEAD
 =======
 >>>>>>> 16a40be (store video every 5 second)
+=======
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
     def stop_camera(self):
         """Stop the camera, release resources, and close all windows."""
         if self.output:
             self.output.release()
             print(f"Saved final video segment: {self.current_filename}")
 <<<<<<< HEAD
+<<<<<<< HEAD
         if self.is_critical_recording:
             self._stop_critical_video()
 =======
 >>>>>>> 16a40be (store video every 5 second)
+=======
+        if self.is_critical_recording:
+            self._stop_critical_video()
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
         cv2.destroyAllWindows()
         self.picam2.close()
         print("Camera stopped and resources released")
@@ -202,6 +260,7 @@ class Camera:
             while True:
                 self.capture_frame()
 <<<<<<< HEAD
+<<<<<<< HEAD
                 # Press 'c' to trigger critical recording
                 if cv2.waitKey(1) & 0xFF == ord('c'):
                     self.start_critical_video()
@@ -211,6 +270,13 @@ class Camera:
                 # Press 'q' to stop recording
                 if cv2.waitKey(1) & 0xFF == ord('q'):
 >>>>>>> 16a40be (store video every 5 second)
+=======
+                # Press 'c' to trigger critical recording
+                if cv2.waitKey(1) & 0xFF == ord('c'):
+                    self.start_critical_video()
+                # Press 'q' to stop recording
+                elif cv2.waitKey(1) & 0xFF == ord('q'):
+>>>>>>> 20eb82a (Recording critical video, pink issue kinda solved, lighr sensor data is send to clould)
                     break
         finally:
             self.stop_camera()
