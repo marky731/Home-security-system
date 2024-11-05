@@ -16,12 +16,17 @@ class Camera:
                  resolution=(640, 480),
                  fps=30,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  segment_duration=5,
                  max_videos=4,
                  critical_duration=7):  # Duration of critical video before and after event trigger
 =======
                  segment_duration=10):  # 300 seconds = 5 minutes
 >>>>>>> 16a40be (store video every 5 second)
+=======
+                 segment_duration=20,
+                 max_videos=5):  # Store only the latest 10 videos
+>>>>>>> fbaf0f4 (Storing certain amount of video and delete the previous ones)
         # Initialize camera
         self.picam2 = Picamera2()
         config = self.picam2.create_preview_configuration(main={"size": resolution, "format": "RGB888"})
@@ -38,7 +43,11 @@ class Camera:
         self.critical_duration = critical_duration
 =======
         self.segment_duration = segment_duration  # Duration of each video segment in seconds
+<<<<<<< HEAD
 >>>>>>> 16a40be (store video every 5 second)
+=======
+        self.max_videos = max_videos  # Maximum number of video files to keep
+>>>>>>> fbaf0f4 (Storing certain amount of video and delete the previous ones)
         
         # Ensure the video directory exists
         os.makedirs(self.video_directory, exist_ok=True)
@@ -83,6 +92,7 @@ class Camera:
         self.start_time = time.time()
         print(f"Started new video segment: {self.current_filename}")
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         # Manage video storage to keep only the latest videos
         self._manage_video_storage()
@@ -94,13 +104,25 @@ class Camera:
             f for f in os.listdir(self.video_directory)
             if f.endswith(".mp4") and not f.startswith("critical")
         ])
+=======
+        
+        # Manage video storage to keep only the latest 10 videos
+        self._manage_video_storage()
+    
+    def _manage_video_storage(self):
+        """Delete the oldest video if the maximum number of videos is exceeded."""
+        video_files = sorted([f for f in os.listdir(self.video_directory) if f.endswith(".mp4")])
+>>>>>>> fbaf0f4 (Storing certain amount of video and delete the previous ones)
         if len(video_files) > self.max_videos:
             oldest_file = os.path.join(self.video_directory, video_files[0])
             os.remove(oldest_file)
             print(f"Deleted oldest video segment: {oldest_file}")
+<<<<<<< HEAD
 
 =======
 >>>>>>> 16a40be (store video every 5 second)
+=======
+>>>>>>> fbaf0f4 (Storing certain amount of video and delete the previous ones)
     
     def capture_frame(self):
         """Capture a single frame and write it to the current video segment."""
