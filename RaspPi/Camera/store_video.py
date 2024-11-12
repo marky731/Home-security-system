@@ -6,15 +6,17 @@ from datetime import datetime
 import numpy as np
 from collections import deque
 import threading
+from queue import Queue
 
 class Camera:
     def __init__(self,
                  video_directory="/home/peworo/Desktop/Home-security-system/RaspPi/Videos/",
                  resolution=(640, 480),
                  fps=30,
-                 segment_duration=5,
-                 max_videos=4,
-                 critical_duration=10):  # Duration of critical video before and after event trigger
+                 segment_duration=15,
+                 max_videos=5,
+                 critical_duration=20):  # Duration of critical video before and after event trigger
+        
         # Initialize camera
         self.picam2 = Picamera2()
         config = self.picam2.create_preview_configuration(main={"size": resolution, "format": "RGB888"})
@@ -33,7 +35,7 @@ class Camera:
         os.makedirs(self.video_directory, exist_ok=True)
         
         # Initialize VideoWriter
-        self.output = None
+        self.output_vid_writer = None
         self.start_time = None
         
         # Buffer for critical video (store past frames)
@@ -42,6 +44,7 @@ class Camera:
         # Flag for critical video recording
         self.is_critical_recording = False
         self.critical_output = None
+        self.commands = Queue() 
     
     def _get_new_video_filename(self, prefix="video"):
         """Generate a new video filename with a timestamp."""
@@ -56,11 +59,11 @@ class Camera:
     
     def _start_new_video(self):
         """Start a new video segment."""
-        if self.output:
-            self.output.release()
+        if self.output_vid_writer:
+            self.output_vid_writer.release()
             print(f"Saved video segment: {self.current_filename}")
         self.current_filename = self._get_new_video_filename()
-        self.output = cv2.VideoWriter(self.current_filename, self.fourcc, self.fps, self.resolution)
+        self.output_vid_writer = cv2.VideoWriter(self.current_filename, self.fourcc, self.fps, self.resolution)
         self.start_time = time.time()
         print(f"Started new video segment: {self.current_filename}")
         
@@ -91,8 +94,8 @@ class Camera:
         cv2.imshow("Pi Camera Feed", frame)
         
         # Write to current video segment
-        if self.output:
-            self.output.write(frame)
+        if self.output_vid_writer:
+            self.output_vid_writer.write(frame)
         
         # Buffer the frame for critical video
         self.frame_buffer.append(frame)
@@ -140,8 +143,8 @@ class Camera:
     
     def stop_camera(self):
         """Stop the camera, release resources, and close all windows."""
-        if self.output:
-            self.output.release()
+        if self.output_vid_writer:
+            self.output_vid_writer.release()
             print(f"Saved final video segment: {self.current_filename}")
         if self.is_critical_recording:
             self._stop_critical_video()
@@ -161,6 +164,11 @@ class Camera:
                 # Press 'q' to stop recording
                 elif cv2.waitKey(1) & 0xFF == ord('q'):
                     break
+
+                if not self.commands.empty():
+                    command = self.commands.get()
+                    if command == "start_critical_video":
+                        self.start_critical_video()
         finally:
             self.stop_camera()
 
