@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 import numpy as np
 from collections import deque
-from threading import Thread
+import threading
 
 class Camera:
     def __init__(self,
@@ -14,7 +14,7 @@ class Camera:
                  fps=30,
                  segment_duration=5,
                  max_videos=4,
-                 critical_duration=7):  # Duration of critical video before and after event trigger
+                 critical_duration=10):  # Duration of critical video before and after event trigger
         # Initialize camera
         self.picam2 = Picamera2()
         config = self.picam2.create_preview_configuration(main={"size": resolution, "format": "RGB888"})
@@ -37,7 +37,7 @@ class Camera:
         self.start_time = None
         
         # Buffer for critical video (store past frames)
-        self.frame_buffer = deque(maxlen=int(self.fps * self.critical_duration))
+        self.frame_buffer = deque(maxlen=int(self.fps * self.critical_duration*2))
 
         # Flag for critical video recording
         self.is_critical_recording = False
@@ -45,7 +45,7 @@ class Camera:
     
     def _get_new_video_filename(self, prefix="video"):
         """Generate a new video filename with a timestamp."""
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
         return os.path.join(self.video_directory, f"{prefix}_{timestamp}.mp4")
     
     def start_camera(self):
@@ -69,7 +69,6 @@ class Camera:
     
     def _manage_video_storage(self):
         """Delete the oldest video if the maximum number of non-critical videos is exceeded."""
-        # Get a list of all video files, excluding critical videos
         video_files = sorted([
             f for f in os.listdir(self.video_directory)
             if f.endswith(".mp4") and not f.startswith("critical")
@@ -117,11 +116,19 @@ class Camera:
             self.critical_start_time = time.time()
             critical_filename = self._get_new_video_filename(prefix="critical")
             self.critical_output = cv2.VideoWriter(critical_filename, self.fourcc, self.fps, self.resolution)
-            
-            # Write buffered frames (past frames)
-            for buffered_frame in self.frame_buffer:
-                self.critical_output.write(buffered_frame)
+
+            # Start a thread to write buffered frames
+            threading.Thread(target=self._write_buffered_frames).start()
             print(f"Started critical video recording: {critical_filename}")
+
+    def _write_buffered_frames(self):
+        """Write buffered frames (past frames) for the critical video in a separate thread."""
+        # Write all buffered frames to the critical output
+        while self.frame_buffer:
+            buffered_frame = self.frame_buffer.popleft()  # Get and remove the oldest frame
+            if self.critical_output:
+                self.critical_output.write(buffered_frame)
+        print("Buffered frames written to critical video.")
     
     def _stop_critical_video(self):
         """Stop recording the critical video and reset flags."""
@@ -158,16 +165,8 @@ class Camera:
             self.stop_camera()
 
 if __name__ == "__main__":
-    # Define the directory where videos will be saved
     video_directory = "/home/peworo/Desktop/Home-security-system/RaspPi/Videos/"
     
-    # Create a Camera object
     camera = Camera(video_directory=video_directory)
     
-    # Start recording
     camera.record()
-
-
-
-
-
