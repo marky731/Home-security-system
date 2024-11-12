@@ -5,7 +5,7 @@ import time
 import os
 import firebase_admin 
 from firebase_admin import credentials, storage, db
-#from RaspPi.Camera.store_video import Camera
+from RaspPi.Camera.store_video import Camera
 
 
 # Parameters
@@ -46,6 +46,6 @@ def upload_to_firebase(file_path):
         print("Failed to upload video to Firebase:", e)
 
 
-
+upload_to_firebase('/home/peworo/Desktop/Home-security-system/RaspPi/Videos/critical_2024-11-12_12:56:21.mp4')
 
  

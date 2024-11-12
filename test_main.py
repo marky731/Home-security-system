@@ -22,24 +22,29 @@ def on_connect():
 def on_message():
     global last_email_time  # Make sure we're modifying the global variable
     data = 0
+    i = 0
 
     initial_time = time.time()
     try:
+        i = 0
         while True:
-            print("Recieving data.")
+            if i == 0:
+                print("recieved data !!!")
+                i = 1
+
             current_time = time.time()
+
             if current_time - initial_time > 10:
-                detected_time = time.time()
-                print(f"Alert! {data} > 10!")
+                pass
                 
-                if detected_time - last_email_time > 5:
-                    last_email_time = detected_time  # Update the last email sent time
-                    handle_high_value(data, detected_time)
+            handle_high_value(data)
+            print("start sleeping.......")
+            time.sleep(30)
     except ValueError:
         print("Received non-numeric data")
 
 # Define a function to handle high values
-def handle_high_value(data, detected_time):
+def handle_high_value(data):
     # Define your action here when the data goes above the threshold
     print(f"Sending email: {data}")
     # email_alert("Home Security System Alert", "Your home has been invaded!", "sakari.heinio@gmail.com")
