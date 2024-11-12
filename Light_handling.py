@@ -1,8 +1,10 @@
 import paho.mqtt.client as mqtt
 import time
 from Notification.alert import email_alert
+import threading
+from RaspPi.Camera.store_video import Camera
 
-THRESHOLD = 2000  # Adjust threshold
+THRESHOLD = 3100  # Adjust threshold
 
 # MQTT broker
 BROKER = 'localhost'
@@ -11,6 +13,11 @@ TOPIC = 'sensor/light'
 
 detected_time = None
 last_email_time = 0  # Initialize the last email sent time
+
+myCamera = Camera()
+camera_thread = threading.Thread(target=myCamera.record)
+camera_thread.start()
+print("---- Thread started ----")
 
 # Callback when the client connects to the broker
 def on_connect(client, userdata, flags, rc):
@@ -42,6 +49,7 @@ def handle_high_value(data, detected_time):
     # Define your action here when the data goes above the threshold
     print(f"Sending email: {data}")
     email_alert("Home Security System Alert", "Your home has been invaded!", "sakari.heinio@gmail.com")
+    myCamera.start_critical_video()
 
 # Create MQTT client
 client = mqtt.Client()
@@ -53,3 +61,4 @@ client.on_message = on_message
 client.connect(BROKER, PORT, 60)
 # Blocking loop to process network traffic and handle callbacks
 client.loop_forever()
+
