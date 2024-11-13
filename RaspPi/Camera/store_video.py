@@ -12,7 +12,7 @@ class Camera:
                  fps=30,
                  segment_duration=15,
                  max_videos=5,
-                 critical_buffer_size=5):  # Duration of critical video before and after event trigger
+                 critical_buffer_size=5):
         
         # Video settings
         self.fourcc = cv2.VideoWriter_fourcc(*'mp4v')
@@ -84,6 +84,13 @@ class Camera:
             cv2.imwrite(image_filename, frame)
             print(f"Saved critical frame image: {image_filename}")
     
+    def _rename_video_to_critical(self):
+        """Rename the current video file to indicate a critical event."""
+        critical_filename = self.current_filename.replace("video_", "critical_")
+        os.rename(self.current_filename, critical_filename)
+        self.current_filename = critical_filename
+        print(f"Renamed video to critical: {self.current_filename}")
+    
     def capture_frame(self):
         """Capture a single frame and write it to the current video segment."""
         ret, frame = self.cap.read()
@@ -134,6 +141,7 @@ class Camera:
                 if key == ord('c') and not capturing_after_critical:
                     frames_after_critical = self.critical_buffer_size
                     capturing_after_critical = True
+                    self._rename_video_to_critical()
                     print("!!! Critical recording initiated")
                 elif capturing_after_critical:
                     frames_after_critical -= 1
