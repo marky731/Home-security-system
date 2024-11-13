@@ -3,6 +3,7 @@ import time
 import os
 from datetime import datetime
 import numpy as np
+from collections import deque
 
 class Camera:
     def __init__(self,
@@ -10,7 +11,8 @@ class Camera:
                  resolution=(640, 480),
                  fps=30,
                  segment_duration=15,
-                 max_videos=5):  # Duration of critical video before and after event trigger
+                 max_videos=5,
+                 critical_buffer_size=5):  # Duration of critical video before and after event trigger
         
         # Video settings
         self.fourcc = cv2.VideoWriter_fourcc(*'mp4v')
@@ -19,6 +21,7 @@ class Camera:
         self.fps = fps
         self.segment_duration = segment_duration
         self.max_videos = max_videos
+        self.critical_buffer_size = critical_buffer_size
 
         # Initialize camera using cv2.VideoCapture
         self.cap = cv2.VideoCapture(0)
@@ -34,11 +37,10 @@ class Camera:
         
         # Flag for critical video recording
         self.is_critical_recording = False
+        self.critical_frames_buffer = deque(maxlen=2 * critical_buffer_size + 1)  # Stores frames around the event
     
     def _get_new_video_filename(self, prefix="video"):
         """Generate a new video filename with a timestamp."""
-        if self.is_critical_recording:
-            prefix = "critical"
         timestamp = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
         return os.path.join(self.video_directory, f"{prefix}_{timestamp}.mp4")
     
@@ -52,13 +54,7 @@ class Camera:
     def _start_new_video(self):
         """Start a new video segment."""
         if self.output_vid_writer:
-            # Close and rename current video if flagged as critical
             self.output_vid_writer.release()
-            if self.is_critical_recording:
-                critical_filename = self._get_new_video_filename("critical")
-                os.rename(self.current_filename, critical_filename)
-                print(f"Renamed to critical: {critical_filename}")
-                self.is_critical_recording = False
 
         # Start a new segment
         self.current_filename = self._get_new_video_filename()
@@ -80,6 +76,14 @@ class Camera:
             os.remove(oldest_file)
             print(f"Deleted oldest video segment: {oldest_file}")
     
+    def _save_critical_frames_as_images(self):
+        """Save each frame in the buffer as an image file."""
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+        for idx, frame in enumerate(self.critical_frames_buffer):
+            image_filename = os.path.join(self.video_directory, f"frame_critical_{timestamp}_{idx}.png")
+            cv2.imwrite(image_filename, frame)
+            print(f"Saved critical frame image: {image_filename}")
+    
     def capture_frame(self):
         """Capture a single frame and write it to the current video segment."""
         ret, frame = self.cap.read()
@@ -87,16 +91,19 @@ class Camera:
             print("Failed to capture frame.")
             return
         
+        # Apply color correction
         correction_matrix = np.array([[0.68, 0, 0], [0, 1, 0], [0, 0, 0.8]])  # Adjust these values
         frame = cv2.transform(frame, correction_matrix)
         
         # Display frame
         cv2.imshow("Camera Feed", frame)
-        cv2.imwrite()
         
         # Write to current video segment
         if self.output_vid_writer:
             self.output_vid_writer.write(frame)
+        
+        # Buffer the frame for critical capture
+        self.critical_frames_buffer.append(frame)
         
         # Check if the current segment has reached the duration limit
         elapsed_time = time.time() - self.start_time
@@ -117,13 +124,23 @@ class Camera:
         """Continuously capture frames and record until 'q' is pressed."""
         self.start_camera()
         try:
+            frames_after_critical = 0
+            capturing_after_critical = False
+            
             while True:
                 self.capture_frame()
                 time.sleep(0.01)
                 key = cv2.waitKey(1) & 0xFF
-                if key == ord('c'):
-                    self.is_critical_recording = True
+                if key == ord('c') and not capturing_after_critical:
+                    frames_after_critical = self.critical_buffer_size
+                    capturing_after_critical = True
                     print("!!! Critical recording initiated")
+                elif capturing_after_critical:
+                    frames_after_critical -= 1
+                    if frames_after_critical <= 0:
+                        capturing_after_critical = False
+                        self._save_critical_frames_as_images()
+                        self.critical_frames_buffer.clear()
                 elif key == ord('q'):
                     break
         finally:
