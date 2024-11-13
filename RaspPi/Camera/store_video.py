@@ -3,9 +3,6 @@ import time
 import os
 from datetime import datetime
 import numpy as np
-from collections import deque
-import threading
-from queue import Queue
 
 class Camera:
     def __init__(self,
@@ -13,7 +10,7 @@ class Camera:
                  resolution=(640, 480),
                  fps=30,
                  segment_duration=15,
-                 max_videos=5,):  # Duration of critical video before and after event trigger
+                 max_videos=5):  # Duration of critical video before and after event trigger
         
         # Video settings
         self.fourcc = cv2.VideoWriter_fourcc(*'mp4v')
@@ -55,10 +52,15 @@ class Camera:
     def _start_new_video(self):
         """Start a new video segment."""
         if self.output_vid_writer:
+            # Close and rename current video if flagged as critical
             self.output_vid_writer.release()
-        if self.is_critical_recording:
-            self.current_filename = self._get_new_video_filename(prefix="critical")
-            print(f"Saved video segment: {self.current_filename}")
+            if self.is_critical_recording:
+                critical_filename = self._get_new_video_filename("critical")
+                os.rename(self.current_filename, critical_filename)
+                print(f"Renamed to critical: {critical_filename}")
+                self.is_critical_recording = False
+
+        # Start a new segment
         self.current_filename = self._get_new_video_filename()
         self.output_vid_writer = cv2.VideoWriter(self.current_filename, self.fourcc, self.fps, self.resolution)
         self.start_time = time.time()
@@ -90,6 +92,7 @@ class Camera:
         
         # Display frame
         cv2.imshow("Camera Feed", frame)
+        cv2.imwrite()
         
         # Write to current video segment
         if self.output_vid_writer:
@@ -117,10 +120,11 @@ class Camera:
             while True:
                 self.capture_frame()
                 time.sleep(0.01)
-                if cv2.waitKey(1) & 0xFF == ord('c'):
+                key = cv2.waitKey(1) & 0xFF
+                if key == ord('c'):
                     self.is_critical_recording = True
-                    print("!!!Critical Vid Started")
-                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    print("!!! Critical recording initiated")
+                elif key == ord('q'):
                     break
         finally:
             self.stop_camera()
@@ -129,7 +133,4 @@ if __name__ == "__main__":
     video_directory = "RaspPi/videos"
     
     camera = Camera(video_directory=video_directory)
-    
     camera.record()
-
-# change the name of the video file if LDR is triggered, and tell program to not delete that file
