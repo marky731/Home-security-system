@@ -23,13 +23,14 @@ class Camera:
         self.segment_duration = segment_duration
         self.max_videos = max_videos
         self.critical_buffer_size = critical_buffer_size
+        self.fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 
         # Initialize PiCamera
         self.camera = PiCamera()
         self.camera.resolution = resolution
         self.camera.framerate = fps
         self.raw_capture = PiRGBArray(self.camera, size=resolution)
-        
+
         # Ensure the video directory exists
         os.makedirs(self.video_directory, exist_ok=True)
         
@@ -47,7 +48,7 @@ class Camera:
         return os.path.join(self.video_directory, f"{prefix}_{timestamp}.mp4")
     
     def start_camera(self):
-        """Start the camera stream."""
+        """Start the camera preview."""
         self.camera.start_preview()
         print("Camera started")
         self._start_new_video()
@@ -59,7 +60,7 @@ class Camera:
 
         # Start a new segment
         self.current_filename = self._get_new_video_filename()
-        self.output_vid_writer = cv2.VideoWriter(self.current_filename, cv2.VideoWriter_fourcc(*'mp4v'), self.fps, self.resolution)
+        self.output_vid_writer = cv2.VideoWriter(self.current_filename, self.fourcc, self.fps, self.resolution)
         self.start_time = time.time()
         print(f"Started new video segment: {self.current_filename}")
         
@@ -98,7 +99,7 @@ class Camera:
             image = frame.array
             
             # Apply color correction
-            correction_matrix = np.array([[0.68, 0, 0], [0, 1, 0], [0, 0, 0.8]])
+            correction_matrix = np.array([[0.68, 0, 0], [0, 1, 0], [0, 0, 0.8]])  # Adjust these values
             image = cv2.transform(image, correction_matrix)
             
             # Display frame
