@@ -47,9 +47,9 @@ def on_message(client, userdata, msg):
 # Define a function to handle high values
 def handle_high_value(data, detected_time):
     # Define your action here when the data goes above the threshold
-    print(f"Sending email: {data}")
+    print(f"!!!Sending email: {data}")
+    myCamera.is_critical_recording = True
     email_alert("Home Security System Alert", "Your home has been invaded!", "sakari.heinio@gmail.com")
-    myCamera.start_critical_video()
 
 # Create MQTT client
 client = mqtt.Client()

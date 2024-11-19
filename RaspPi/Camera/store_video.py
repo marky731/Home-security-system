@@ -140,8 +140,10 @@ class Camera:
         self.start_camera()
         try:
             frames_after_critical = 0
-            capturing_after_critical = False
-            
+            self.is_critical_recording = False
+            changed_name_to_critical = False
+
+
             while True:
                 self.capture_frame()
                 time.sleep(0.01)
@@ -149,18 +151,23 @@ class Camera:
                 # Capture key press
                 key = cv2.waitKey(1) & 0xFF
                 
-                if key == ord('c') and not capturing_after_critical:
-                    frames_after_critical = self.critical_buffer_size
-                    capturing_after_critical = True
+                if key == ord('c') and not changed_name_to_critical:
+                    self.is_critical_recording = True
+
+                if self.is_critical_recording and changed_name_to_critical==False:
                     self._rename_video_to_critical()
+                    changed_name_to_critical = True
+                    frames_after_critical = self.critical_buffer_size
                     print("!!! Critical recording initiated")
-                elif capturing_after_critical:
+                elif self.is_critical_recording:
                     frames_after_critical -= 1
                     if frames_after_critical <= 0:
-                        capturing_after_critical = False
+                        self.is_critical_recording = False
                         self._save_critical_frames_as_images()
                         self.critical_frames_buffer.clear()
+                        changed_name_to_critical = False
                 elif key == ord('q'):
+                    self.stop_camera()
                     print("Stopping camera...")
                     break
         finally:
