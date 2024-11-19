@@ -1,0 +1,56 @@
+import paho.mqtt.client as mqtt
+from picamera2 import Picamera2
+import cv2
+import time
+from RaspPi.Camera.store_video import Camera
+
+# Parameters
+THRESHOLD = 1500  # Light intensity threshold
+BROKER = 'localhost'  
+PORT = 1883           
+TOPIC = 'sensor/light'
+
+# MQTT Handling
+def on_connect(client, userdata, flags, rc):
+    print(f"Connected with result code {rc}")
+    client.subscribe(TOPIC)
+
+def on_message(client, userdata, msg):
+    try:
+        data = float(msg.payload.decode())
+        print(f"Received data: {data}")
+        
+        # Trigger action if light intensity is above threshold
+        if data > THRESHOLD:
+            print(f"Alert! Light intensity {data} is above the threshold of {THRESHOLD}!")
+            handle_high_value(data)
+    except ValueError:
+        print("Received non-numeric data")
+
+def handle_high_value(data):
+    """Action for light intensity above threshold."""
+    print(f"Taking action for high light intensity: {data}")
+    camera.save_short_video()  # Save the last 5 seconds when alert is triggered
+
+# Initialize Camera and MQTT client
+long_video_path = "/home/peworo/Desktop/Home-security-system/RaspPi/Videos/full_video.mp4"
+short_video_path = "/home/peworo/Desktop/Home-security-system/RaspPi/Videos/short_video.mp4"
+
+camera = Camera(long_video_path, short_video_path)
+
+client = mqtt.Client()
+client.on_connect = on_connect
+client.on_message = on_message
+
+# Start MQTT Client
+client.connect(BROKER, PORT, 60)
+
+# Run both MQTT and Camera recording concurrently
+from threading import Thread
+
+# Start the camera recording in a separate thread
+camera_thread = Thread(target=camera.record)
+camera_thread.start()
+
+# Start the MQTT loop (this will block the main thread)
+client.loop_forever()
