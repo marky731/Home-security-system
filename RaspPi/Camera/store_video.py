@@ -5,6 +5,7 @@ import numpy as np
 import cv2
 from picamera2 import Picamera2
 from collections import deque
+from RaspPi.Camera.video_to_remote import *
 
 class Camera:
     def __init__(self,
