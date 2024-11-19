@@ -3,13 +3,12 @@ import os
 from datetime import datetime
 import numpy as np
 import cv2
+from picamera2 import Picamera2
 from collections import deque
-from picamera import PiCamera
-from picamera.array import PiRGBArray
 
 class Camera:
     def __init__(self,
-                 video_directory="RaspPi/videos",
+                 video_directory="videos",
                  resolution=(640, 480),
                  fps=30,
                  segment_duration=15,
@@ -25,11 +24,12 @@ class Camera:
         self.critical_buffer_size = critical_buffer_size
         self.fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 
-        # Initialize PiCamera
-        self.camera = PiCamera()
-        self.camera.resolution = resolution
-        self.camera.framerate = fps
-        self.raw_capture = PiRGBArray(self.camera, size=resolution)
+        # Initialize Picamera2
+        self.picam2 = Picamera2()
+        self.picam2.configure(self.picam2.create_video_configuration(
+            main={"size": resolution, "format": "YUV420"},
+            controls={"FrameRate": fps}
+        ))
 
         # Ensure the video directory exists
         os.makedirs(self.video_directory, exist_ok=True)
@@ -48,8 +48,8 @@ class Camera:
         return os.path.join(self.video_directory, f"{prefix}_{timestamp}.mp4")
     
     def start_camera(self):
-        """Start the camera preview."""
-        self.camera.start_preview()
+        """Start the camera without the Picamera2 preview."""
+        self.picam2.start()
         print("Camera started")
         self._start_new_video()
     
@@ -82,7 +82,7 @@ class Camera:
         """Save each frame in the buffer as an image file."""
         timestamp = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
         for idx, frame in enumerate(self.critical_frames_buffer):
-            image_filename = os.path.join(self.video_directory, f"frame_critical_{timestamp}_{idx}.png")
+            image_filename = os.path.join(self.video_directory, f"captured_{timestamp}_{idx}.png")
             cv2.imwrite(image_filename, frame)
             print(f"Saved critical frame image: {image_filename}")
     
@@ -95,31 +95,35 @@ class Camera:
     
     def capture_frame(self):
         """Capture a single frame and write it to the current video segment."""
-        for frame in self.camera.capture_continuous(self.raw_capture, format="bgr", use_video_port=True):
-            image = frame.array
-            
-            # Apply color correction
-            correction_matrix = np.array([[0.68, 0, 0], [0, 1, 0], [0, 0, 0.8]])  # Adjust these values
-            image = cv2.transform(image, correction_matrix)
-            
-            # Display frame
-            cv2.imshow("Camera Feed", image)
-            
-            # Write to current video segment
-            if self.output_vid_writer:
-                self.output_vid_writer.write(image)
-            
-            # Buffer the frame for critical capture
-            self.critical_frames_buffer.append(image)
-            
-            # Clear the buffer for the next frame
-            self.raw_capture.truncate(0)
-            
-            # Check if the current segment has reached the duration limit
-            elapsed_time = time.time() - self.start_time
-            if elapsed_time >= self.segment_duration:
-                self._start_new_video()
-                break
+        frame = self.picam2.capture_array()
+
+        # Check if the frame is in YUV format and convert to BGR
+        if len(frame.shape) == 2 or frame.shape[2] != 3:
+            frame = cv2.cvtColor(frame, cv2.COLOR_YUV2BGR_I420)
+
+        # Apply color correction if needed (ensure frame is 3 channels)
+        if frame.shape[2] == 3:
+            correction_matrix = np.array([[0.68, 0, 0], [0, 1, 0], [0, 0, 0.8]])  # Adjust values as necessary
+            frame = cv2.transform(frame, correction_matrix)
+
+        # Display the frame
+        cv2.imshow("Camera Feed", frame)
+
+        # Write to current video segment
+        if self.output_vid_writer:
+            self.output_vid_writer.write(frame)
+
+        # Buffer the frame for critical capture
+        self.critical_frames_buffer.append(frame)
+
+        # Check if the current segment has reached the duration limit
+        elapsed_time = time.time() - self.start_time
+        if elapsed_time >= self.segment_duration:
+            self._start_new_video()
+
+        # Wait for a short period to control frame rate
+        cv2.waitKey(1)
+
     
     def stop_camera(self):
         """Stop the camera, release resources, and close all windows."""
@@ -127,7 +131,7 @@ class Camera:
             self.output_vid_writer.release()
             print(f"Saved final video segment: {self.current_filename}")
             
-        self.camera.close()
+        self.picam2.stop()
         cv2.destroyAllWindows()
         print("Camera stopped and resources released")
     
@@ -141,7 +145,10 @@ class Camera:
             while True:
                 self.capture_frame()
                 time.sleep(0.01)
+                
+                # Capture key press
                 key = cv2.waitKey(1) & 0xFF
+                
                 if key == ord('c') and not capturing_after_critical:
                     frames_after_critical = self.critical_buffer_size
                     capturing_after_critical = True
@@ -154,12 +161,14 @@ class Camera:
                         self._save_critical_frames_as_images()
                         self.critical_frames_buffer.clear()
                 elif key == ord('q'):
+                    print("Stopping camera...")
                     break
         finally:
             self.stop_camera()
 
+
 if __name__ == "__main__":
-    video_directory = "RaspPi/videos"
+    video_directory = "../videos"
     
     camera = Camera(video_directory=video_directory)
     camera.record()
