@@ -175,7 +175,7 @@ class Camera:
 
 
 if __name__ == "__main__":
-    video_directory = "../videos"
+    video_directory = "/home/peworo/Desktop/Home-security-system/videos"
     
     camera = Camera(video_directory=video_directory)
     camera.record()
