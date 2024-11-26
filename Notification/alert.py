@@ -19,5 +19,5 @@ def email_alert(subject, body, to):
     server.quit()
 
 if __name__ == '__main__':
-    email_alert("Home Security System Alert", "Your home has been invaded!", "sakari.heinio@gmail.com")
+    email_alert("Home Security System Alert", "Your home has been invaded!", "ikramuyghur24@gmail.com")
 
