@@ -4,7 +4,7 @@ from Notification.alert import email_alert
 import threading
 from Camera.store_video import Camera
 
-THRESHOLD = 3100  # Adjust threshold
+THRESHOLD = 1000  # Adjust threshold
 
 # MQTT broker
 BROKER = 'localhost'
@@ -50,6 +50,8 @@ def handle_high_value(data, detected_time):
     print(f"!!!Sending email: {data}")
     myCamera.is_critical_recording = True
     email_alert("Home Security System Alert", "Your home has been invaded!", "ikramuyghur24@gmail.com")
+    # email_alert("Home Security System Alert", "Your home has been invaded!", "sakari.heinio@gmail.com")
+
 
 # Create MQTT client
 client = mqtt.Client()
